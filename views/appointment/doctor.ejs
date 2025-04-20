@@ -1,0 +1,89 @@
+<%- layout("layouts/boilerplate") %>
+
+<body>
+    <div class="video-div">
+        <video autoplay muted loop id="myVideo">
+          <source src="/media/background-video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <!-- <h2 class="doc-heading">Book Appointment</h2> -->
+      <div class="main-doc-box">
+        <div class="doc-box">
+          <h4 class="doc-form-heading">Doctor Details</h4>
+          <hr>
+          <div class="doc-box-card">
+            <img src="<%= doctor.profileImage %>" alt="No Profile Image" class="doc-profile-img">
+            <div class="doc-box-body">
+              <h4><%= doctor.name %></h4>
+              <p><%=doctor.specialization %> <br> <%= doctor.qualification %> <br>
+                Experiance: <%= doctor.experience %> years <br> <br>
+                <b> Address:</b> <%= doctor.address.clinicName %>,<br> <%= doctor.address.street %>, <%= doctor.address.city %> 
+                <br> <br>
+                <b>Consultation Fee: </b><%= doctor.consultationFee %> <br>
+                <b>Phone:</b> <%= doctor.phone %>
+              </p>
+          </div>
+          
+          </div>
+          <p class="doc-rating">
+            <b>Rating: </b> <%=doctor.rating %> (Total Ratings: <%= doctor.totalRatings %>)
+          </p>
+          <div class="doc-box-time-available">
+            <h5>Available Time</h5>
+            <div class="aval-btn-box-time">
+              <div class="btn btn-outline-success">Start: <%= doctor.availableTime.start %></div> 
+              <div class="btn btn-outline-success">End: <%= doctor.availableTime.end %></div>
+            </div>
+          </div>
+          <br>
+          <div class="doc-box-days-available">
+            <h5>Available Days</h5>
+            <div class="aval-btn-box">
+              <% for( let day of doctor.availableDays){ %>
+                <div class="btn btn-success"><%= day %></div>
+              <% } %>
+            </div>
+          </div>
+
+        </div>
+        <form method="post" action="/appointment" class="doc-book-app-form">
+          <h4 class="doc-form-heading">Appointment Form</h4>
+          <hr>
+          <div class="mb-3">
+            <label for="name" class="form-lable">Full Name</label>
+            <input type="text" name="appointment[name]" id="name" placeholder="Enter Full Name" class="form-control">
+        </div>
+        <div class="row">
+            <div class="mb-3 col-md-5">
+                <label for="age" class="form-lable">Age</label>
+                <input type="number" name="appointment[age]" id="age" placeholder="Enter Age" class="form-control">
+            </div>
+            <div class="form-group col-md-6 offset-1">
+              <label for="gender" class="form-lable">Gender</label>
+              <select class="form-control" id="gender" placeholder="Select your gender">
+                <option>Select your Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="symptoms" class="form-lable">Symtoms</label>
+            <textarea class="form-control" name="appointment[symptoms]" id="symptoms" placeholder="describe your symptoms or disease" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3 ">
+          <label for="phone" class="form-lable">Phone Number</label>
+          <input type="number" name="appointment[phone]" id="phone" placeholder="Enter Phone Number" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label for="address" class="form-lable">Enter Address</label>
+        <input type="text" name="appointment[address]" id="address" placeholder="Enter Address" class="form-control">
+    </div>
+
+        <button class="btn btn-success offset-3 col-md-6 btn-book-appointment">Book Appointment</button>
+        </form>
+      </div>
+</body>

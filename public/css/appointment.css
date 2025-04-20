@@ -1,0 +1,120 @@
+:root{
+    --background-color: #FBFBFF;
+    --main-color: #0B4F6C;
+    --green: #20BF55;
+}
+
+.doc-heading{
+    text-align: center;
+    background-color: var(--main-color);
+}
+
+.main-doc-box{
+    display: flex;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    justify-content: space-evenly;
+}
+
+.doc-box-card{
+    display: flex;
+}
+
+.doc-box{
+    background-color: #4f626025;
+    width: 600px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    /* border-radius: 0.5rem; */
+    /* border: 1px solid var(--main-color); */
+    padding: 1rem;
+}
+
+.doc-profile-img{
+    width: 250px;
+    border: 0.08rem solid var(--main-color);
+    border-radius: 0.25rem;
+}
+
+.doc-box-body h4{
+    color: #0B4F6C;
+    margin-bottom: 0;
+}
+
+.doc-box-body p{
+    color:#093d53;
+}
+
+.doc-box-body{
+    color: black;
+    margin-top: 0.25rem;
+    padding-left: 4rem;
+}
+
+.doc-book-app-form{
+    background-color: #0b4f6c32;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--main-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 500px;
+    box-shadow: 2px 2px 4px white;
+}
+
+.doc-form-heading{
+    color: rgb(41, 41, 41);
+    text-align: center;
+}
+
+.btn-book-appointment{
+    background-color: #20BF55;
+}
+
+.dark-it{
+    color: var(--main-color);
+}
+
+.doc-box-days-available{
+    margin-left: 1rem;
+}
+
+.doc-box-days-available h5{
+    color: #093d53;
+}
+
+.aval-btn-box{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.aval-btn-box .btn{
+    margin-right: 1rem;
+}
+
+.doc-box-time-available{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doc-box-time-available h5{
+    margin: 0;
+    color: #093d53;
+    line-height: 1;
+    text-align: center;
+}
+
+.doc-box-time-available .btn{
+    margin-right: 1rem;
+    /* color: #20BF55; */
+}
+
+.doc-rating{
+    margin-left: 1rem;
+    margin-top: 1rem;
+    color: #093d53;
+}

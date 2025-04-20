@@ -1,0 +1,65 @@
+<%- layout("layouts/boilerplate") %>
+
+<body>
+    <H3 class="app-heading">Select Doctor or Hospital</H3>
+    <div class="search-section app-search-section">
+        <input type="text" placeholder="search for doctors/hospitals/symtoms/disease">
+        <div class="app-search-btn-box">
+            <div class="search-btn">
+                Search
+            </div>
+            <div class="search-btn GP-btn">
+                Any General Physician
+            </div>
+        </div>
+      </div>
+
+
+      <div class="hospital_list" id="doctor">
+        <h4>All Doctors</h4>
+        <div class="top_hospitals">
+          <% for (let i = 0; i < 20; i++){ %>
+          <a href="/appointment/<%=allDoctors[i]._id%>" class="card" style="width: 18rem;">
+            <img src="<%= allDoctors[i].profileImage %>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5><%= allDoctors[i].name %></h5>
+              <p class="card-text"><%= allDoctors[i].specialization %> <br><%= allDoctors[i].qualification %> <br>Experiance: <%= allDoctors[i].experience %> years</p>
+            </div>
+          </a>
+          <% } %>
+          <!-- <div class="card" style="width: 18rem;">
+            <img src="media/doctor.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5>Dr.kashifa</h5>
+              <p class="card-text">Allergist/immunologist <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum possimus </p>
+            </div>
+          </div> -->
+
+          <!-- <div class="card" style="width: 18rem;">
+            <img src="media/doctor.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5>Dr.Preety Mehta</h5>
+              <p class="card-text">Family physician<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum possimus eos</p>
+            </p>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img src="media/doctor.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5>Dr.Noor Alam</h5>
+              <p class="card-text">
+                Podiatrist <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ipsum exercitationem voluptatibus </p>
+            </div>
+          </div> -->
+        </div> 
+        <!-- <h5 id="near-me-heading">Doctors Near Me</h5>
+        <div class="near-me">
+          <input type="text" placeholder="select state">
+          <input type="text" placeholder="select city">
+          <div class="near-me-search-btn">
+            Search
+          </div>
+        </div> -->
+      </div>
+</body>
