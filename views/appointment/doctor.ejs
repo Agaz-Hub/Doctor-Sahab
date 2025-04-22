@@ -31,8 +31,8 @@
           <div class="doc-box-time-available">
             <h5>Available Time</h5>
             <div class="aval-btn-box-time">
-              <div class="btn btn-outline-success">Start: <%= doctor.availableTime.start %></div> 
-              <div class="btn btn-outline-success">End: <%= doctor.availableTime.end %></div>
+              <div class="btn btn-outline-dark btn-sm">Start: <%= doctor.availableTime.start %></div> 
+              <div class="btn btn-outline-dark btn-sm">End: <%= doctor.availableTime.end %></div>
             </div>
           </div>
           <br>
@@ -40,11 +40,11 @@
             <h5>Available Days</h5>
             <div class="aval-btn-box">
               <% for( let day of doctor.availableDays){ %>
-                <div class="btn btn-success"><%= day %></div>
+                <div class="btn btn-secondary"><%= day %></div>
               <% } %>
             </div>
           </div>
-
+          <hr>
         </div>
         <form method="post" action="/appointment" class="doc-book-app-form">
           <h4 class="doc-form-heading">Appointment Form</h4>
@@ -60,7 +60,7 @@
             </div>
             <div class="form-group col-md-6 offset-1">
               <label for="gender" class="form-lable">Gender</label>
-              <select class="form-control" id="gender" placeholder="Select your gender">
+              <select class="form-control" name="appointment[gender]" id="gender" placeholder="Select your gender">
                 <option>Select your Gender</option>
                 <option>Male</option>
                 <option>Female</option>
@@ -73,16 +73,39 @@
             <textarea class="form-control" name="appointment[symptoms]" id="symptoms" placeholder="describe your symptoms or disease" rows="3"></textarea>
         </div>
 
-        <div class="mb-3 ">
-          <label for="phone" class="form-lable">Phone Number</label>
-          <input type="number" name="appointment[phone]" id="phone" placeholder="Enter Phone Number" class="form-control">
+        <div class="row">
+          <div class="mb-3 col-md-6">
+            <label for="phone" class="form-lable">Phone Number</label>
+            <input type="number" name="appointment[phone]" id="phone" placeholder="Enter Phone Number" class="form-control">
+          </div>
+  
+          <div class="mb-3 col-md-6 ">
+            <label for="appointmentDate" class="form-lable">Date</label>
+            <input type="date" class="form-control" name="appointment[date]" id="appointmentDate" min="<?= date('Y-m-d'); ?>" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address" class="form-lable">Address</label>
+          <input type="text" name="appointment[address]" id="address" placeholder="Enter Address" class="form-control">
       </div>
 
       <div class="mb-3">
-        <label for="address" class="form-lable">Enter Address</label>
-        <input type="text" name="appointment[address]" id="address" placeholder="Enter Address" class="form-control">
-    </div>
-
+        <label class="form-label d-block">Consultation Mode:</label>
+      
+        <div class="btn-group" role="group" aria-label="Consultation Mode">
+          <input type="radio" class="btn-check" name="appointment[mode]" id="online" value="online" autocomplete="off" checked>
+          <label class="btn btn-outline-secondary" for="online">Online</label>
+      
+          <input type="radio" class="btn-check" name="appointment[mode]" id="offline" value="offline" autocomplete="off">
+          <label class="btn btn-outline-secondary" for="offline">Offline</label>
+        </div>
+      </div>
+      <!-- <input type="hidden" name="userId" value="12345"> -->
+      <input type="hidden" name="appointment[doctorID]" value="<%= doctor._id %>">
+      
+    
+      <br>
         <button class="btn btn-success offset-3 col-md-6 btn-book-appointment">Book Appointment</button>
         </form>
       </div>

@@ -28,6 +28,7 @@
     /* border-radius: 0.5rem; */
     /* border: 1px solid var(--main-color); */
     padding: 1rem;
+    height: fit-content;
 }
 
 .doc-profile-img{
@@ -67,6 +68,7 @@
     text-align: center;
 }
 
+
 .btn-book-appointment{
     background-color: #20BF55;
 }
@@ -76,7 +78,7 @@
 }
 
 .doc-box-days-available{
-    margin-left: 1rem;
+    margin-left: 2rem;
 }
 
 .doc-box-days-available h5{
@@ -90,12 +92,12 @@
 }
 
 .aval-btn-box .btn{
-    margin-right: 1rem;
+    margin-right: 2rem;
 }
 
 .doc-box-time-available{
     margin-top: 1rem;
-    margin-left: 1rem;
+    margin-left: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -109,7 +111,7 @@
 }
 
 .doc-box-time-available .btn{
-    margin-right: 1rem;
+    margin-right: 2rem;
     /* color: #20BF55; */
 }
 

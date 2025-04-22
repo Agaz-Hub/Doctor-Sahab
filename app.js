@@ -3,6 +3,7 @@ let app = express();
 
 const mongoose = require("mongoose");
 const Doctor = require("./models/doctors.js");
+const Appointment = require("./models/appointment.js");
 
 let path = require("path");
 
@@ -41,4 +42,10 @@ app.get("/appointment/:id",async (req, res) => {
     let {id} = req.params;
     const doctor = await Doctor.findById(id);
     res.render("appointment/doctor.ejs",{doctor});
+});
+
+app.post("/appointment", async (req, res) =>{
+    const newAppointment = new Appointment(req.body.appointment);
+    await newAppointment.save();
+    res.redirect("/");
 });
