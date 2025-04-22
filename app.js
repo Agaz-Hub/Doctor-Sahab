@@ -49,3 +49,4 @@ app.post("/appointment", async (req, res) =>{
     await newAppointment.save();
     res.redirect("/");
 });
+  
