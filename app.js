@@ -49,4 +49,17 @@ app.post("/appointment", async (req, res) =>{
     await newAppointment.save();
     res.redirect("/");
 });
+
+
+app.get('/api/search', async (req, res) => {
+    const query = req.query.query;
+    try {
+      const doctors = await Doctor.find({ name: { $regex: query, $options: 'i' } })
+        .limit(5) // limit suggestions to 5
+        .exec();
+      res.json(doctors);
+    } catch (err) {
+      res.status(500).send('Error fetching doctors');
+    }
+  });
   
