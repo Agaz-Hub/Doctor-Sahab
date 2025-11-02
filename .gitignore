@@ -1,0 +1,100 @@
+# ==================================
+# Environment Variables - DO NOT COMMIT
+# ==================================
+**/.env
+.env
+.env.local
+.env.*.local
+
+# ==================================
+# Dependencies
+# ==================================
+**/node_modules/
+node_modules/
+
+# Python Virtual Environment
+**/myenv/
+**/venv/
+**/.venv/
+**/env/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ==================================
+# Build Outputs
+# ==================================
+**/dist/
+**/build/
+**/.next/
+**/out/
+dist
+dist-ssr
+
+# ==================================
+# Logs
+# ==================================
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ==================================
+# IDE and Editor Files
+# ==================================
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.swp
+*.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+.DS_Store
+
+# ==================================
+# Operating System Files
+# ==================================
+Thumbs.db
+Desktop.ini
+
+# ==================================
+# Uploaded Files
+# ==================================
+**/uploads/*
+!**/uploads/.gitkeep
+
+# ==================================
+# Temporary Files
+# ==================================
+*.tmp
+*.temp
+.cache/
+.parcel-cache/
+
+# ==================================
+# Testing
+# ==================================
+coverage/
+.nyc_output/
+
+# ==================================
+# Package Manager
+# ==================================
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ==================================
+# ML Models (optional - if too large)
+# ==================================
+# *.keras
+# *.h5
+# *.pkl
