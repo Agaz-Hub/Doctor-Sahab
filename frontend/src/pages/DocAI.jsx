@@ -10,7 +10,7 @@ const DocAI = () => {
   const [prediction, setPrediction] = useState(null);
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const API_BASE_URL = process.env.DOCAI_URL || "http://localhost:8000";
+  const API_BASE_URL = import.meta.env.DOCAI_URL || "http://localhost:8000";
 
   // Fetch symptoms list on component mount
   useEffect(() => {
@@ -105,7 +105,7 @@ const DocAI = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30 py-10 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-blue-50/30 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
@@ -180,7 +180,7 @@ const DocAI = () => {
 
           {/* Selected Symptoms */}
           {selectedSymptoms.length > 0 && (
-            <div className="mb-8 p-5 bg-gradient-to-br from-blue-50 to-indigo-50/50 rounded-xl border border-blue-100">
+            <div className="mb-8 p-5 bg-linear-to-br from-blue-50 to-indigo-50/50 rounded-xl border border-blue-100">
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <label className="text-sm font-semibold text-gray-800">
@@ -303,7 +303,7 @@ const DocAI = () => {
             </div>
 
             {/* Predicted Disease */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50/50 rounded-xl p-6 mb-6 border border-blue-100">
+            <div className="bg-linear-to-br from-blue-50 to-indigo-50/50 rounded-xl p-6 mb-6 border border-blue-100">
               <p className="text-xs text-blue-600 font-semibold mb-2 uppercase tracking-wide">
                 Primary Diagnosis
               </p>
@@ -381,7 +381,7 @@ const DocAI = () => {
             {/* Disclaimer */}
             <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
               <div className="flex gap-3">
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                   <div className="bg-amber-100 p-2 rounded-lg">
                     <svg
                       className="w-5 h-5 text-amber-600"
@@ -451,7 +451,7 @@ const DocAI = () => {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl shadow-md p-6 text-white">
+          <div className="bg-linear-to-br from-blue-600 to-indigo-700 rounded-xl shadow-md p-6 text-white">
             <div className="flex items-center gap-2 mb-5">
               <div className="bg-white/20 p-2 rounded-lg">
                 <svg
